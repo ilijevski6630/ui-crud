@@ -19,6 +19,7 @@ spec:
       labels:
         app: ui-crud
     spec:
+      terminationGracePeriodSeconds: 60
       containers:
       - name: ui-crud
         image: 360162455068.dkr.ecr.eu-west-1.amazonaws.com/ui-crud:latest
