@@ -49,8 +49,8 @@ pipeline {
                         cat ${CLIENT_CRT} > client.crt
                         cat ${CLIENT_KEY} > client.key
                         cat ${KUBECONFIGFILE} > kubeconfig
+                        kubectl --kubeconfig=kubeconfig delete -f k8s/
                         kubectl --kubeconfig=kubeconfig apply -f k8s/
-                        kubectl rollout restart deployment ${DEPLOYMENT_NAME}
                         """
                 }
             }
