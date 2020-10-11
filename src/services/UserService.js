@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const USERS_REST_API_URL = "http://localhost:8080/api/user";
+const USERS_REST_API_URL = "http://aws-haproxy.ddns.net:30010/api/user";
 
 class UserService {
 
