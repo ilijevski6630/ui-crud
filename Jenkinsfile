@@ -16,11 +16,6 @@ pipeline {
         DOCKER_IMAGE = "ui-crud"
     }
     stages {
-        stage('CleanWorkspace') {
-            steps {
-                cleanWs()
-            }
-        }
         stage ('Remove old Docker images'){
             steps{
                 sh 'yes | docker image prune -a'
@@ -56,6 +51,11 @@ pipeline {
                         kubectl --kubeconfig=kubeconfig apply -f k8s/
                         """
                 }
+            }
+        }
+        stage('CleanWorkspace') {
+            steps {
+                cleanWs()
             }
         }
     }
