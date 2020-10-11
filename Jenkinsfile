@@ -50,7 +50,7 @@ pipeline {
                         cat ${CLIENT_KEY} > client.key
                         cat ${KUBECONFIGFILE} > kubeconfig
                         kubectl --kubeconfig=kubeconfig apply -f k8s/
-                        kubectl --kubeconfig=kubeconfig rollout restart deployment
+                        kubectl --kubeconfig=kubeconfig rollout restart deployment $DEPLOYMENT_NAME
                         """
                 }
             }
