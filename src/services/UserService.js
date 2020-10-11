@@ -4,8 +4,36 @@ const USERS_REST_API_URL = "http://localhost:8080/api/user";
 
 class UserService {
 
-    getUsers(){
-        return axios.get(USERS_REST_API_URL);
+    async getUsers() {
+        try {
+          return await axios.get(USERS_REST_API_URL);
+        } catch (e) {
+          console.log(e);
+        }
+    }
+
+    async deleteUser(username) {
+      try {
+        return await axios.delete(`${USERS_REST_API_URL}/${username}`)
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+    async updateUser(user) {
+      try {
+        return await axios.put(`${USERS_REST_API_URL}/${user.username}`, user)
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+    async createUser(user) {
+      try {
+        return await axios.post(`${USERS_REST_API_URL}`, user)
+      } catch (e) {
+        console.log(e);
+      }
     }
 
 }

@@ -1,0 +1,19 @@
+.new-user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-user-form input {
+  margin: 15px 0 0 0;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.new-user-error {
+  color: red;
+}
+
+.new-user-form button {
+  margin-top: 20px;
+}
