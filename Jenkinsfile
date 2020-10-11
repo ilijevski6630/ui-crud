@@ -16,6 +16,11 @@ pipeline {
         DOCKER_IMAGE = "ui-crud"
     }
     stages {
+        stage('CleanWorkspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage ('Remove old Docker images'){
             steps{
                 sh 'yes | docker image prune -a'
