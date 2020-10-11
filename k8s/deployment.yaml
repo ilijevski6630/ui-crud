@@ -20,7 +20,7 @@ spec:
         app: ui-crud
     spec:
       containers:
-      - name: spring-rest-crud
+      - name: ui-crud
         image: 360162455068.dkr.ecr.eu-west-1.amazonaws.com/ui-crud:latest
         imagePullPolicy: Always
         ports:
